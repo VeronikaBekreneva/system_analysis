@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart - Parfum</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Your Cart</h1>
+        <a href="/shop">← Back to Shop</a>
+    </header>
+
+    <main class="cart">
+        {% for item in cart_items %}
+        <div class="cart_item">
+            <img src="{{ item.image }}" alt="{{ item.name }}" width="80">
+            <div>
+                <h2>{{ item.name }}</h2>
+                <p>Price: ${{ item.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p><b>Subtotal: ${{ "%.2f"|format(item.price * item.quantity) }}</b></p>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+
+        <div class="cart_total">
+            <h3>Total: ${{ "%.2f"|format(total_price) }}</h3>
+            <button>Proceed to Checkout</button>
+        </div>
+    </main>
+</body>
+</html>

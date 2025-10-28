@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/css?f[]=Sentient@300,400,500,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/variables.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/buttons.css">
+    <link rel="stylesheet" href="static/css/promo.css">
+    <link rel="stylesheet" href="static/css/brands.css">
+    <link rel="stylesheet" href="static/css/reviews.css"> 
+    <link rel="stylesheet" href="static/css/product_page.css">
+    <link rel="stylesheet" href="static/css/catalog.css">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <section class="banner">
+        <p class="paragraph_small underline">Just Restocked | Shop Our Fragrance Collection</p>
+        <span class="close_btn material-icons">close</span>
+    </section>
+
+    <section class="main_block_wo_img">
+        <header class="header">
+            <nav class="menu">
+                <ul class="menu_ul menu_left">
+                    <li><a class="accent_text" href="shop.html">shop</a></li>
+                    <li><a class="accent_text" href="#">about</a></li>
+                </ul>
+                <a class="menu_logo" href="index.html">
+                    <img src="static/images/logo.png" alt="Parfum logo">
+                </a>                
+                <ul class="menu_ul menu_right">
+                    <li><a class="accent_text" href="#">blog</a></li>
+                    <li><a class="accent_text" href="#">contact</a></li>
+                    <li>
+                        <button class="menu_cart_btn" aria-label="Open cart">
+                            <img src="static/images/cart.png" alt="Cart icon">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+
+    <main>
+        <section class="product_block">
+            <div class="product_photo">
+                <img class="product_photo img" src="{{ product.image }}" alt="{{ product.name }}">
+            </div>
+
+            <div class="product_info">
+                <div class="main_info">
+                    <h1 class="h1">{{ product.name }}</h1>
+
+                    <div class="product_quick_info">
+                        <a class="accent_text">{{ product.description }}</a>
+                        <a class="paragraph_large">${{ product.price }}</a>
+                    </div>
+
+                    <div class="product_quantity">
+                        <a class="accent_text">qty</a>
+                        <div class="quantity">
+                            <a>{{ product.quantity }}</a>
+                        </div>
+                    </div>
+
+                    <button class="tocart_button">add to cart</button>
+
+                    <div class="product_notes">
+                        <a class="accent_text">scent notes</a>
+                        <button class="plus"><span class="material-icons plus_icon">add</span></button>
+                    </div>
+
+                    <div class="product_ingredients">
+                        <a class="accent_text">ingredients</a>
+                        <button class="plus"><span class="material-icons plus_icon">add</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="contactbanner">
+        <div class="contactbanner_container">
+            <div class="contactbanner_toprow">
+                <div class="contactbanner_leftpart">
+                    <div class="contactbanner_flower">
+                        <img src="static/images/flower.png">
+                    </div>
+                    <div class="contactbanner_email">
+                        <h3>We send <span class="italic bold">great</span> emails.</h3>
+                        
+                        <form class="contactbanner_form" action="/subscribe" method="POST">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Enter your email" 
+                                class="contactbanner_input"
+                                required
+                            >
+                            <button type="submit" class="button_white">
+                                <p class="accent_text">Subscribe</p>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <div class="contactbanner_bottomrow">
+                <img src="static/images/PARFUM.png" alt="Logo">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

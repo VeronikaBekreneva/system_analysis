@@ -1,0 +1,161 @@
+@import url('sentient.css');
+* {
+    box-sizing: border-box;
+}
+
+/*UI Kit */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    margin: 0;
+}
+
+.h1{
+    font-family: var(--sentientl);
+    font-size: 80px;
+    color: var(--black);
+    line-height: 1;
+}
+
+.h2{
+    font-family: var(--sentientl);
+    font-size: 40px;
+    color: var(--black);
+    line-height: 1;
+}
+
+.h3{
+    font-family: var(--sentientl);
+    font-size: 32px;
+    color:var(--black);
+    line-height: 1;
+}
+
+.h4{
+    font-family: var(--sentientl);
+    font-size: 24px;
+    color: var(--black);
+    line-height: 1;
+    margin-top: 150px;
+}
+
+.h5{
+    font-family: var(--sentientl);
+    font-size: 20px;
+    color: var(--black);
+    line-height: 1;
+    margin-top: 150px;
+}
+
+.h6{
+    font-family: var(--sentientl);
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1;
+}
+
+.section_title{
+    font-family: var(--sentient);
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--black);
+    line-height: 1;
+}
+
+.section_title .italic {
+    font-style: italic;
+}
+
+.accent_text {
+    font-family: var(--manrope);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--black);
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.paragraph_large{
+    font-family: var(--manrope);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+    text-decoration: none;
+    flex-wrap: wrap;
+    line-height: 140%;
+}
+
+.paragraph_small{
+    font-family: var(--manrope);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.paragraph_xsmall{
+    font-family: var(--manrope);
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+body {
+    width: 100%;
+    background: var(--bg);
+    font-family: var(--sentient);
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Рекомендации */
+
+.recommendations {
+    background-color: var(--bg);
+    padding: var(--section-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/*Секция*/
+.section_block {
+    width: 100%;
+    background-image: url('../images/fragnances\ background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 384px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.tab_title {
+    font-family: var(--sentient);
+    font-weight: 100;
+    font-size: 80px;
+    color: var(--white);
+    text-align: center;
+    line-height: 1;
+    padding-top: 90px;
+}
