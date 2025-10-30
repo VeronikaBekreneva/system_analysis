@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Parfum</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/css?f[]=Sentient@300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/buttons.css">
+    <link rel="stylesheet" href="/static/css/promo.css">
+    <link rel="stylesheet" href="/static/css/brands.css">
+    <link rel="stylesheet" href="/static/css/reviews.css"> 
+    <link rel="stylesheet" href="/static/css/product_page.css">
+    <link rel="stylesheet" href="/static/css/catalog.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <section class="banner">
+        <p class="paragraph_small underline">Just Restocked | Shop Our Fragrance Collection</p>
+        <span class="close_btn material-icons">close</span>
+    </section>
+
+    <section class="section_block">
+        <header class="header">
+            <nav class="menu">
+                <ul class="menu_ul menu_left">
+                    <li><a class="accent_text" href="{{ url_for('shop_page') }}">Shop</a></li>
+                    <li><a class="accent_text" href="#">About</a></li>
+                </ul>
+                <a class="menu_logo" href="{{ url_for('home') }}">
+                    <img src="/static/images/logo.png" alt="Parfum logo">
+                </a>
+                <ul class="menu_ul menu_right">
+                    <li><a class="accent_text" href="#">Blog</a></li>
+                    <li><a class="accent_text" href="#">Contact</a></li>
+                    <li>
+                        <button class="menu_cart_btn" aria-label="Open cart">
+                            <img src="/static/images/cart.png" alt="Cart icon">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <h1 class="tab_title">
+            All <span class="italic">fragrances</span>.
+        </h1>
+    </section>
+
+    <main>
+        <section class="catalogue">
+            <div class="product_list">
+                {% for product in products %}
+                <div class="card">
+                    <div class="badge {% if not product.on_sale %}no{% endif %}">On Sale</div>
+                    <img src="{{ product.image }}" alt="{{ product.name }}" class="card_image">
+                    <div class="card_content">
+                        <h2 class="card_title">{{ product.name }}</h2>
+                        <div class="accent_text">{{ product.description }}</div>
+                        <div class="card_price">${{ product.price }}</div>
+                    </div>
+                    <button class="card_btn" onclick="window.location.href='{{ url_for('get_product', product_id=product.id|string) }}'">
+                        SHOP NOW
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
